@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "tdsimodel",
+    'name': "iut",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
