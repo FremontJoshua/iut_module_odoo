@@ -2,13 +2,13 @@
 
 from odoo import models, fields, api
 
-class IutItBrand(models.Model):
-    _name = 'iut.it.brand'
+class IutRoom(models.Model):
+    _name = 'iut.room'
 
+    floor = fields.Char()
     name = fields.Char(required=True)
-    warranty_delay_month = fields.Integer()
-    support_phone = fields.Char()
-    model_ids = fields.One2many('iut.it.model', 'brand_id', string='Models')
+    partner_ids = fields.One2many('res.partner', 'room_id', string='Partners')
+    office_id = fields.Many2one('iut.office', string='Office')
 
     _sql_constraints = [
         ('name_unique',

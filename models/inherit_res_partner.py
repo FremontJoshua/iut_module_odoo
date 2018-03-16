@@ -8,3 +8,4 @@ class ResPartner(models.Model):
 
     employee_ref = fields.Char()
     device_ids = fields.One2many('iut.it.device', 'partner_id', string='Devices')
+    room_id = fields.Many2one('iut.room', string='Room')
