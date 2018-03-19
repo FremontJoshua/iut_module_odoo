@@ -9,7 +9,7 @@ class IutItDevice(models.Model):
     date_allocation = fields.Date()
     serial_number = fields.Char(required=True)
     date_purchase = fields.Date()
-    date_warranty_ = fields.Date()
+    date_warranty_end = fields.Date()
     model_id = fields.Many2one('iut.it.model', string='Model')
     partner_id = fields.Many2one('res.partner', string='Partner')
     room_id = fields.Integer(related='partner_id.room_id.id', store=True)

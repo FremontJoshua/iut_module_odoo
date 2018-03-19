@@ -24,6 +24,13 @@
 
     # always loaded
     'data': [
+        'views/iut_brand_views.xml',
+        'views/iut_device_views.xml',
+        'views/iut_model_views.xml',
+        'views/iut_model_type_views.xml',
+        'views/iut_room_views.xml',
+        'views/iut_office_views.xml',
+        'views/res_partner_views.xml',
         'security/tdsimodel_security.xml',
         'datas/datas.xml',
         'views/views.xml',

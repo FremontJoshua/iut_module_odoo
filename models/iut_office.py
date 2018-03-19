@@ -7,10 +7,8 @@ class IutOffice(models.Model):
     _inherit = 'res.partner'
 
     partner_ids = fields.One2many('iut.room', 'office_id', string='Rooms')
+    employee_nb = fields.Integer(compute='_compute_employee_nb')
 
-    # employee_nb = fields.Integer(compute='_compute_employee_nb')
-    #
-    # @api.depends('value', 'tax')
-    # def _compute_employee_nb(self):
-    #     for record in self:
-    #         record.total = record.value + record.value * record.tax
+    @api.depends()
+    def _compute_employee_nb(self):
+        return True

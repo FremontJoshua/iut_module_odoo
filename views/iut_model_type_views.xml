@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+      <!-- Vue tree -->
+    <record model="ir.ui.view" id="iut.model_type_tree_view">
+      <field name="name">iut.model.type.tree</field>
+      <field name="model">iut.model.type</field>
+      <field name="arch" type="xml">
+        <tree string="Model type">
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+      <!-- Actions -->
+      <record model="ir.actions.act_window" id="iut_model_type_action">
+      <field name="name">Type de modèle</field>
+      <field name="res_model">iut.model.type</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+</odoo>
