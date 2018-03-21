@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
   <data>
+      <!-- Vue search -->
+    <record model="ir.ui.view" id="iut_room_search_view">
+        <field name="name">iut.room.search</field>
+        <field name="model">iut.room</field>
+        <field name="arch" type="xml">
+            <search string="Room">
+                <group>
+                    <field name="name" select="1"/>
+                    <field name="floor" select="1"/>
+                </group>
+            </search>
+        </field>
+    </record>
 
       <!-- Vue tree -->
     <record model="ir.ui.view" id="iut_room_tree_view">

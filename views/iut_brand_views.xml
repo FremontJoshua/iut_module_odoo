@@ -2,6 +2,21 @@
 <odoo>
   <data>
 
+    <!-- Vue search -->
+    <record model="ir.ui.view" id="iut_brand_search_view">
+        <field name="name">iut.brand.search</field>
+        <field name="model">iut.it.brand</field>
+        <field name="arch" type="xml">
+            <search string="Brand">
+                <group>
+                    <field name="name" select="1"/>
+                    <field name="warranty_delay_month" select="1"/>
+                    <field name="support_phone" select="1"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
     <!-- Vue tree -->
     <record model="ir.ui.view" id="iut_brand_tree_view">
       <field name="name">iut.brand.tree</field>

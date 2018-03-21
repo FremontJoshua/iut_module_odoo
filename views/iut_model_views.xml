@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
   <data>
+      <!-- Vue search -->
+    <record model="ir.ui.view" id="iut_model_search_view">
+        <field name="name">iut.model.search</field>
+        <field name="model">iut.it.model</field>
+        <field name="arch" type="xml">
+            <search string="Model">
+                <group>
+                    <field name="name" select="1"/>
+                    <field name="ref" select="1"/>
+                    <field name="brand_id" select="1"/>
+                </group>
+            </search>
+        </field>
+    </record>
 
       <!-- Vue tree -->
     <record model="ir.ui.view" id="iut_model_tree_view">

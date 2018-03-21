@@ -1,5 +1,24 @@
 <odoo>
   <data>
+      <!-- Vue search -->
+    <record model="ir.ui.view" id="iut_device_search_view">
+        <field name="name">iut.device.search</field>
+        <field name="model">iut.it.device</field>
+        <field name="arch" type="xml">
+            <search string="Device">
+                <group>
+                    <field name="name" select="1"/>
+                    <field name="date_purchase" select="1"/>
+                    <field name="date_warranty_end" select="1"/>
+                    <field name="model_id" select="1"/>
+                    <field name="partner_id" select="1"/>
+                    <field name="room_id" select="1"/>
+                    <field name="office_id" select="1"/>
+                    <field name="serial_number" select="1"/>
+                </group>
+            </search>
+        </field>
+    </record>
 
       <!-- Vue tree -->
     <record model="ir.ui.view" id="iut_device_tree_view">
