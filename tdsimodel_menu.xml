@@ -2,16 +2,9 @@
 <openerp>
     <data>
         <!-- Top menu item -->
-        <menuitem name="Client" id="menu_model_root" groups="group_model_member" sequence="80" />
         <menuitem name="IUT" id="menu_iut_root" groups="group_model_member" sequence="80" />
         
         <!-- Menu Modele / Configuration -->
-        <menuitem id="menu_modele_config" parent="menu_model_root"
-            name="Configuration" sequence="16"/>
-            
-            <menuitem id="menu_res_company_admin" parent="menu_modele_config"
-                action="base.action_res_company_form" sequence="10" name="Société"/>
-
         <menuitem id="menu_iut_config" parent="menu_iut_root"
             name="Configuration" sequence="16"/>
 
@@ -27,6 +20,8 @@
                 action="iut_room_action" sequence="10" name="Pièces"/>
             <menuitem id="menu_office_admin" parent="menu_iut_config"
                 action="iut_office_action" sequence="10" name="Bureaux"/>
+            <menuitem id="menu_partner_admin" parent="menu_iut_config"
+                action="iut_partner_action" sequence="10" name="Partenaires"/>
 
     </data>
 </openerp>

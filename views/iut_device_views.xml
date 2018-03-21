@@ -2,24 +2,58 @@
   <data>
 
       <!-- Vue tree -->
-    <record model="ir.ui.view" id="iut.device_tree_view">
+    <record model="ir.ui.view" id="iut_device_tree_view">
       <field name="name">iut.device.tree</field>
       <field name="model">iut.it.device</field>
       <field name="arch" type="xml">
-        <tree string="Device">
+        <tree string="Device" decoration-danger="current_date>date_warranty_end">
             <field name="name"/>
             <field name="date_allocation"/>
             <field name="serial_number"/>
             <field name="date_purchase"/>
             <field name="date_warranty_end"/>
+            <field name="model_id"/>
+            <field name="partner_id"/>
+            <field name="room_id"/>
+            <field name="office_id"/>
         </tree>
       </field>
+    </record>
+
+      <record model="ir.ui.view" id="iut_device_form_view">
+        <field name="name">iut.device.form</field>
+        <field name="model">iut.it.device</field>
+        <field name="arch" type="xml">
+            <form string="Device">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <span class="oe_inline">Appareil</span>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="date_allocation"/>
+                            <field name="serial_number"/>
+                            <field name="date_purchase"/>
+                            <field name="date_warranty_end"/>
+                            <field name="model_id"/>
+                            <field name="partner_id"/>
+                            <field name="room_id"/>
+                            <field name="office_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
     </record>
 
       <!-- Actions -->
       <record model="ir.actions.act_window" id="iut_device_action">
       <field name="name">Appareil</field>
       <field name="res_model">iut.it.device</field>
+      <field name="view_type">form</field>
       <field name="view_mode">tree,form</field>
     </record>
 

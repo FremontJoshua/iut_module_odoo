@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
   <data>
-    <record model="ir.ui.view" id="iut.partner_tree_view">
+    <record model="ir.ui.view" id="iut_res_partner_tree_view">
       <field name="model">res.partner</field>
       <field name="inherit_id" ref="base.view_partner_tree"/>
       <field name="arch" type="xml">
@@ -10,6 +10,27 @@
               <field name="room_id"/>
           </tree>
       </field>
+    </record>
+
+      <record model="ir.ui.view" id="res_partner_form_view_iut">
+        <field name="name">res.partner.form.iut</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="priority" eval="99"/>
+        <field name="arch" type="xml">
+            <field name="category_id" position="after">
+             	 <field name="employee_ref"/>
+                 <field name="room_id"/>
+            </field>
+        </field>
+    </record>
+
+      <!-- Actions -->
+      <record model="ir.actions.act_window" id="iut_partner_action">
+      <field name="name">Partenaire</field>
+      <field name="res_model">res.partner</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
     </record>
   </data>
 </odoo>

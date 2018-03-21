@@ -3,7 +3,7 @@
   <data>
 
     <!-- Vue tree -->
-    <record model="ir.ui.view" id="iut.brand_tree_view">
+    <record model="ir.ui.view" id="iut_brand_tree_view">
       <field name="name">iut.brand.tree</field>
       <field name="model">iut.it.brand</field>
       <field name="arch" type="xml">
@@ -16,7 +16,7 @@
     </record>
 
       <!-- Vue form -->
-      <record model="ir.ui.view" id="iut.brand_form_view">
+      <record model="ir.ui.view" id="iut_brand_form_view">
         <field name="name">iut.brand.form</field>
         <field name="model">iut.it.brand</field>
         <field name="arch" type="xml">
@@ -45,6 +45,7 @@
       <record model="ir.actions.act_window" id="iut_brand_action">
       <field name="name">Marque</field>
       <field name="res_model">iut.it.brand</field>
+      <field name="view_type">form</field>
       <field name="view_mode">tree,form</field>
     </record>
 
