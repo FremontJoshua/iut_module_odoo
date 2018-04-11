@@ -1,6 +1,13 @@
 import csv
 import erppeek
 
+"""
+INFORMATIONS :
+
+Dans le modèle iut.it.device, j'ai passer le champ "serial_number" en unique afin d'éviter la duplication d'appareils
+  
+"""
+
 url = 'http://localhost:8071'
 db = 'odoo'
 user = 'admin'
@@ -40,11 +47,12 @@ with open('devices.csv') as csvfile:
         idType = client.search('iut.model.type', [('name', '=', type)])
         if not idType:
             if type:
-                idType = client.create('iut.model.type', {'name': type, 'type_ids': [(4, idModel)]})
+                idType = client.create('iut.model.type', {'name': type, 'model_ids': [(4, idModel)]})
             else:
                 idType = False
         else:
             idType = idType[0]
+            client.write('iut.model.type', [idType], {'model_ids': [(4, idModel)]})
 
         idEmployee = client.search('res.partner', [('name', '=', employee)])
         if not idEmployee:
