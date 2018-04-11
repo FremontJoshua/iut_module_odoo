@@ -16,6 +16,12 @@ class IutItDevice(models.Model):
     room_id = fields.Integer(related='partner_id.room_id.id', store=True, string='Room')
     office_id = fields.Integer(related='partner_id.room_id.office_id.id', store=True, string='Office')
 
+    _sql_constraints = [
+        ('serial_number_unique',
+         'unique(serial_number)',
+         'Choose another value - it has to be unique!')
+    ]
+
 
     @api.onchange('date_purchase', 'model_id', 'model_id.brand_id.warranty_delay_month')
     def _change_date_warranty(self):
