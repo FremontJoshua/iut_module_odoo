@@ -31,6 +31,12 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="mode" >primary</field>
         <field name="arch" type="xml">
+            <div class="oe_button_box" name="button_box">
+                <button name="button_devices" type="action"
+                        class="oe_line oe_stat_button" icon="fa-desktop" >
+                    <field name="count_devices" string="Appareils" widget="statinfo" />
+                </button>
+            </div>
           <notebook position="inside">
             <page name="iut" string="IUT">
               <field name="room_ids">

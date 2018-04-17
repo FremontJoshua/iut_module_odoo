@@ -36,6 +36,9 @@
         <field name="model">iut.it.brand</field>
         <field name="arch" type="xml">
             <form string="Brand">
+                <header>
+                    <button name="change_date_warranties" type="object" string="Mise à jour date garantie"/>
+                </header>
                 <sheet>
                     <div class="oe_title">
                         <h1>

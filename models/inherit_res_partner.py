@@ -9,3 +9,8 @@ class ResPartner(models.Model):
     employee_ref = fields.Char()
     device_ids = fields.One2many('iut.it.device', 'partner_id', string='Devices')
     room_id = fields.Many2one('iut.room', string='Room')
+
+    @api.multi
+    def remove_devices(self):
+        self.ensure_one()
+        self.device_ids = ''

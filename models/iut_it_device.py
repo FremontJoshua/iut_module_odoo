@@ -15,6 +15,7 @@ class IutItDevice(models.Model):
     partner_id = fields.Many2one('res.partner', string='Partner')
     room_id = fields.Integer(related='partner_id.room_id.id', store=True, string='Room')
     office_id = fields.Integer(related='partner_id.room_id.office_id.id', store=True, string='Office')
+    is_free = fields.Boolean(string="Libre", default=True)
 
     _sql_constraints = [
         ('serial_number_unique',
@@ -27,3 +28,10 @@ class IutItDevice(models.Model):
     def _change_date_warranty(self):
         self.date_warranty_end = (datetime.datetime.strptime(self.date_purchase, '%Y-%m-%d') +
                                   datetime.timedelta(self.model_id.brand_id.warranty_delay_month * 365/12)).strftime('%Y-%m-%d')
+
+    @api.multi
+    def change_state_free(self):
+        self.ensure_one()
+        self.is_free = not(self.is_free)
+        if self.is_free:
+            self.date_allocation = ''
