@@ -1,1 +1,15 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_device_user,ACL for device,model_iut_it_device,,1,0,0,0
+access_model_user,ACL for model,model_iut_it_model,,1,0,0,0
+access_model_type_user,ACL for model type,model_iut_model_type,,1,0,0,0
+access_brand_user,ACL for brand,model_iut_it_brand,,1,0,0,0
+access_office_user,ACL for office,model_iut_office,,1,0,0,0
+access_room_user,ACL for room,model_iut_room,,1,0,0,0
+access_res_partner_user,ACL for partner,model_res_partner,,1,0,0,0
+access_device_admin,Admin ACL for device,model_iut_it_device,group_model_admin,1,1,1,1
+access_model_admin,Admin ACL for model,model_iut_it_model,group_model_admin,1,1,1,1
+access_model_type_admin,Admin ACL for model type,model_iut_model_type,group_model_admin,1,1,1,1
+access_brand_admin,Admin ACL for brand,model_iut_it_brand,group_model_admin,1,1,1,1
+access_office_admin,Admin ACL for office,model_iut_office,group_model_admin,1,1,1,1
+access_room_admin,Admin ACL for room,model_iut_room,group_model_admin,1,1,1,1
+access_res_partner_admin,Admin ACL for partner,model_res_partner,group_model_admin,1,1,1,1
